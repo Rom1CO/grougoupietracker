@@ -112,7 +112,7 @@ type Singleplayer struct {
 func main() {
 	directory := http.FileServer(http.Dir("css"))
 	http.Handle("/css/", http.StripPrefix("/css/", directory))
-	http.HandleFunc("/home", homeHandler)
+	http.HandleFunc("/home/", homeHandler)
 	http.HandleFunc("/player/", playerHandler)
 	http.ListenAndServe(":9999", nil)
 }
@@ -121,8 +121,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	httpClient := http.Client{
 		Timeout: time.Second * 8,
 	}
-	req, err := http.NewRequest(http.MethodGet, "https://futdb.app/api/players", nil)
-	req.Header.Set("X-AUTH-TOKEN", "75becef4-5d0b-4dc3-b599-1ba5cc611cf2")
+	page := strings.ReplaceAll(r.URL.Path, "/home/", "")
+	lien := "https://futdb.app/api/players?page=" + page
+	req, err := http.NewRequest(http.MethodGet, lien, nil)
+	req.Header.Set("X-AUTH-TOKEN", "75becef4-5d0b-4dc3-b599-1ba5cc611cf2") 
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -184,3 +186,4 @@ func playerHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, response)
 
 }
+func

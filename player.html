@@ -3,33 +3,39 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Players</title>
-        <link rel ="stylesheet" href ="/css/player.css">
         <link rel ="stylesheet" href ="/css/style.css">
 	</head>
 	<body>
         <h1>{{.Item.CommonName}}</h1>
         <h2>{{.Item.Name}}</h2>
-        <p>{{.Item.Age}}</p>
-        <p></p>
-        <p>{{.Item.Height}}</p>
-        <p>{{.Item.Weight}}</p>
-        <p>{{.Item.BirthDate }}</p>
-        <p>{{.Item.League}}</p>
-        <p>{{.Item.Nation}}</p>
-        <p>{{.Item.Club}}</p>
-        <p>{{.Item.Position}}</p>
-        <p>{{.Item.SkillMoves}}</p>
-        <p>{{.Item.WeakFoot}}</p>
-        <p>{{.Item.Foot}}</p>
-        <p>{{.Item.AttackWorkRate}}</p>
-        <p>{{.Item.DefenseWorkRate }}</p>
-        <p>{{.Item.Rating}}</p>
-        <p>{{.Item.Pace}}</p>
-        <p>{{.Item.Shooting}}</p>
-        <p>{{.Item.Passing}}</p>
-        <p>{{.Item.Dribbling}}</p>
-        <p>{{.Item.Defending}}</p>
-        <p>{{.Item.Physicality}}</p>
+        <table>
+                <tr>
+        <td>Age: {{.Item.Age}}</td>
+        <td>Taille: {{.Item.Height}}</td>
+        <td>Poid: {{.Item.Weight}}</td>
+        <td>Anniversair: {{.Item.BirthDate }}</td>
+        <td>League: {{.Item.League}}</td>
+        <td>Nation: {{.Item.Nation}}</td>
+        <td>Club: {{.Item.Club}}</td>
+                </tr>
+        <tr>
+        <td>Position: {{.Item.Position}}</td>
+        <td>SkillMoves: {{.Item.SkillMoves}}</td>
+        <td>WeakFoot: {{.Item.WeakFoot}}</td>
+        <td>Foot: {{.Item.Foot}}</td>
+        <td>AttackWorkRate: {{.Item.AttackWorkRate}}</td>
+        <td>DefenseWorkRate: {{.Item.DefenseWorkRate }}</td>
+        </tr>
+        <tr>
+        <td>Rating: {{.Item.Rating}}</td>
+        <td>Pace: {{.Item.Pace}}</td>
+        <td>Shooting: {{.Item.Shooting}}</td>
+        <td>Passing: {{.Item.Passing}}</td>
+        <td>Dribbling: {{.Item.Dribbling}}</td>
+        <td>Defending: {{.Item.Defending}}</td>
+        <td>Physicality: {{.Item.Physicality}}</td>
+                </tr>
+</table>
 
 	</body>
 </html>

@@ -3,12 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Accueil</title>
-		<link rel ="stylesheet" href ="css/index.css">
-		<link rel ="stylesheet" href ="css/style.css">
+		<link rel ="stylesheet" href ="/css/index.css">
+		<link rel ="stylesheet" href ="/css/style.css">
 	</head>
 	<body>
 		{{range .Items}}
-			<a href="player/{{.ID}}">{{ .Name }}</a> <br/>
+			<a href="/player/{{.ID}}">{{ .Name }}</a> <br/>
 		{{end}}
+		<a href ="/home/{{.Page}}" class=" favorite styled" role="button">
+			Page suivante
+		</a>		
 	</body>
 </html>
