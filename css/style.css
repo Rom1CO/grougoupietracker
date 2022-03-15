@@ -1,12 +1,12 @@
 body
 {
     background-color: #d6d6d6;
-    color : yellow; 
-    display: flex;
+    color : blue; 
     justify-content: center;
-    margin: 0%;
+    margin: 2%;
     padding: 0%;
 }
+
 @media screen and (max-width : 960px)
 {
     footer 
