@@ -1,0 +1,17 @@
+body
+{
+    background-color: #d6d6d6;
+    color : blue; 
+    justify-content: center;
+    margin: 2%;
+    padding: 0%;
+    font-size: 15px;
+}
+
+h1, h2 {
+    text-align: center;
+
+}
+td {
+    border: 1px solid black;
+}
