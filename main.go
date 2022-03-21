@@ -109,6 +109,8 @@ type Singleplayer struct {
 	} `json:"item"`
 }
 
+func add(a int) int { return a + 1 }
+
 func main() {
 	directory := http.FileServer(http.Dir("css"))
 	http.Handle("/css/", http.StripPrefix("/css/", directory))
@@ -125,6 +127,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	lien := "https://futdb.app/api/players?page=" + page
 	req, err := http.NewRequest(http.MethodGet, lien, nil)
 	req.Header.Set("X-AUTH-TOKEN", "75becef4-5d0b-4dc3-b599-1ba5cc611cf2")
+
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -146,7 +149,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	if jsonErr != nil {
 		log.Fatal(jsonErr)
 	}
-
+	response.Page = add(response.Page)
 	tmpl := template.Must(template.ParseFiles("index.html"))
 	tmpl.Execute(w, response)
 
