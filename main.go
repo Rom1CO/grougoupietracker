@@ -124,7 +124,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	page := strings.ReplaceAll(r.URL.Path, "/home/", "")
 	lien := "https://futdb.app/api/players?page=" + page
 	req, err := http.NewRequest(http.MethodGet, lien, nil)
-	req.Header.Set("X-AUTH-TOKEN", "75becef4-5d0b-4dc3-b599-1ba5cc611cf2") 
+	req.Header.Set("X-AUTH-TOKEN", "75becef4-5d0b-4dc3-b599-1ba5cc611cf2")
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -186,4 +186,3 @@ func playerHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, response)
 
 }
-func
