@@ -14,6 +14,8 @@ type Players struct {
 	Count        int `json:"count"`
 	CountTotal   int `json:"count_total"`
 	Page         int `json:"page"`
+	PagePrev     int
+	PageNext     int
 	PageTotal    int `json:"page_total"`
 	ItemsPerPage int `json:"items_per_page"`
 	Items        []struct {
@@ -109,7 +111,10 @@ type Singleplayer struct {
 	} `json:"item"`
 }
 
-func add(a int) int { return a + 1 }
+func add(a int) int  { return a + 1 }
+func back(b int) int { return b - 1 }
+
+	
 
 func main() {
 	directory := http.FileServer(http.Dir("css"))
@@ -149,7 +154,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	if jsonErr != nil {
 		log.Fatal(jsonErr)
 	}
-	response.Page = add(response.Page)
+	response.PageNext = add(response.Page)
+	response.PagePrev = back(response.Page)
 	tmpl := template.Must(template.ParseFiles("index.html"))
 	tmpl.Execute(w, response)
 

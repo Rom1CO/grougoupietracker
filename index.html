@@ -10,8 +10,11 @@
 		{{range .Items}}
 			<a href="/player/{{.ID}}">{{ .Name }}</a> <br/>
 		{{end}}
-		<a href ="/home/{{.Page}}" class=" favorite styled" role="button">
+		<a href ="/home/{{.PageNext}}" class=" favorite styled" role="button">
 			Page suivante
-		</a>		
+		</a>	
+		<a href ="/home/{{.PagePrev}}" class=" buttonback" role="button">
+			Page précédente
+		</a>	
 	</body>
 </html>
